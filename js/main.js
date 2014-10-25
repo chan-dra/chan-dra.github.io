@@ -27,7 +27,7 @@ var App = {
         this.echo("I suppose you like buzzwords? hacking, entrepreneurship, startups, BTC, node, agile, JavaScript, salesforce \n")
     },
     pics: function() {
-        this.echo("pics: //TODO")
+        this.echo("Seriously, I can't have a dirty picture here. try [[b;#44D544;]image_me 'chandra bhavanasi'] and you may landup on some awful pictures of me.");
     },
     clear: function() {
         this.echo("clear: //TODO")
@@ -56,6 +56,38 @@ var App = {
     xkcd: function() {
         window.open('http://c.xkcd.com/random/comic/', '_blank');
         window.focus()
+    },
+    animate_me: function(q) {
+        self = this;
+        $.ajax({
+            url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgtype=animated&q="+q,
+
+            jsonp: "callback",
+
+            dataType: "jsonp",
+
+            success: function( response ) {
+                var k = Math.floor((Math.random() * response.responseData.results.length) - 1);
+                var url = response.responseData.results[k].url;
+                self.echo("<img src='"+ url +"'/>", {raw:true})
+            }
+        });
+    },
+    image_me: function(q) {
+        self = this;
+        $.ajax({
+            url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+q,
+
+            jsonp: "callback",
+
+            dataType: "jsonp",
+
+            success: function( response ) {
+                var k = Math.floor((Math.random() * response.responseData.results.length) - 1);
+                var url = response.responseData.results[k].url;
+                self.echo("<img src='"+ url +"'/>", {raw:true})
+            }
+        });
     }
 }
 
@@ -71,7 +103,8 @@ jQuery(document).ready(function($) {
             // prevent loosing focus
             return false;
         },
-        tabcompletion: true
+        tabcompletion: true,
+        checkArity: false
     });
 });
 
@@ -86,6 +119,8 @@ function showHelp(consoleObj)
         consoleObj.echo("\t[[b;#44D544;]clear]         clear the messy console");
         consoleObj.echo("\t[[b;#44D544;]help]          if you get lost.");
         consoleObj.echo("\t[[b;#44D544;]xkcd]          because who doesn't like a good comic?");
+        consoleObj.echo("\t[[b;#44D544;]animate_me]    the whole internet loves gifs. try [[b;#44D544;]animate_me 'kitten dj']");
+        consoleObj.echo("\t[[b;#44D544;]image_me]      if you want to image search and see people. try [[b;#44D544;]image_me 'chandra bhavanasi'] ");
         consoleObj.echo("");
         consoleObj.echo("PROTIP: press <tab> to trigger autocompletion");
 }
