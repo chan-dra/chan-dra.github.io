@@ -14,8 +14,9 @@ var App = {
     },
     whoami: function() {
         this.echo("\nHey there!");
-        this.echo("I'm Chandra and I'm an engineer / developer / hacker / curiosity driven human.");
-        this.echo("I made this website for fun on a friday night - which doesnt happen often, so this website will probably be forever under construction and never gets completed. ");
+        this.echo("I'm Chandra Bhavanasi and I'm an engineer / developer / hacker / curiosity driven human.");
+        this.echo("I like to challenge myself on a dialy basis.");
+        this.echo("I made this website for fun on a friday night - which doesn't happen often, so this website will probably be forever under construction and never gets completed. ");
         this.echo("");
         this.echo("I currently work at this awesome little startup called <strong><a href='http://isocket.com'>iSocket</a></strong>", {raw: true});
         this.echo("I moved to <strong><a href='http://en.wikipedia.org/wiki/San_Francisco'>San Francisco</a></strong> recently and I love it here.", {raw:true});
@@ -49,7 +50,7 @@ var App = {
         this.echo("Ohhhh jeeez. A smart one. Who are you?")
     },
     about: function() {
-        this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal</a> plugin, and hosted by <a href='http://pages.github.com' target='_blank'>GitHub Pages<a/>.<br/><br/>I'm going update this (I promise!) regularly, with more cool stuff or hacks that I develop. Lookout!", {raw:true});
+        this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal</a> plugin, and hosted by <strong><a href='http://pages.github.com' target='_blank'>GitHub Pages</a></strong> <br/><br/>Some of the commands here are inspired by <strong><a href=''>Hubot for HipChat (if you know what I mean)</a></strong> <br/><br/>I'm going update this (I promise!) regularly, with more cool stuff or hacks that I develop. Lookout!", {raw:true});
 
     },
     xkcd: function() {
