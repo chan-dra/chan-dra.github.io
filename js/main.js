@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
 "  \\_____|_| |_|\\__,_|_| |_|\\__,_|_|  \\__,_| |____/|_| |_|\\__,_| \\_/ \\__,_|_| |_|\\__,_|___/_|\n"+
 "                                                                                            \n"+
 "                                                                                            \n"+
-"[[b;#aaa;]A programmer/geek's rants]\n\n\nWelcome human, type [[b;#aaa;]help] to list available commands, [[b;#aaa;]whoami] to read something about me, or [[b;#aaa;]about] to learn about this webpage.\n\n",
+"[[b;#aaa;]\tA programmer/geek's special place on the web]\n\n\nWelcome human, type [[b;#aaa;]help] to list available commands, [[b;#aaa;]whoami] to read something about me, or [[b;#aaa;]about] to learn about this webpage.\n\n",
         prompt: function(p){
             var path = '~'
             p(e + ":" + path + "# ");
