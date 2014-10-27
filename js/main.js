@@ -27,10 +27,10 @@ var App = {
         this.echo("I suppose you like buzzwords? hacking, entrepreneurship, startups, BTC, node, agile, JavaScript, salesforce \n")
     },
     pics: function() {
-        this.echo("Seriously, I can't have a dirty picture here. try [[b;#44D544;]image_me 'chandra bhavanasi'] and you may landup on some awful pictures of me.");
+        this.echo("Seriously, I can't have a dirty picture here. try [[b;#aaa;]image_me 'chandra bhavanasi'] and you may landup on some awful pictures of me.");
     },
     clear: function() {
-        this.echo("clear: //TODO")
+        this.clear()
     },
     resume: function() {
         this.echo("Seriously, you came this far asking for a resume?")
@@ -44,7 +44,7 @@ var App = {
 
     },
     su: function(user) {
-        this.echo("Seriously, [[b;#44D544;]"+user+"]!? I like you. Who are you?")
+        this.echo("Seriously, [[b;#aaa;]"+user+"]!? I like you. Who are you?")
     },
     sudo: function() {
         this.echo("Ohhhh jeeez. A smart one. Who are you?")
@@ -57,7 +57,8 @@ var App = {
         window.open('http://c.xkcd.com/random/comic/', '_blank');
         window.focus()
     },
-    animate_me: function(q) {
+    animate_me: function(q, q1) {
+        if (q1) q = q + ' ' + q1;
         self = this;
         $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgtype=animated&q="+q,
@@ -73,7 +74,8 @@ var App = {
             }
         });
     },
-    image_me: function(q) {
+    image_me: function(q, q1) {
+        if (q1) q = q + ' ' + q1;
         self = this;
         $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+q,
@@ -94,7 +96,7 @@ var App = {
 jQuery(document).ready(function($) {
     $('body').terminal(App, {
  greetings:
-"[[b;#44D544;]A programmer/geek's rants]\n\n\nWelcome human, type [[b;#44D544;]help] to list available commands, [[b;#44D544;]whoami] to read something about me, or [[b;#44D544;]about] to learn about this webpage.\n\n",
+"[[b;#aaa;]A programmer/geek's rants]\n\n\nWelcome human, type [[b;#aaa;]help] to list available commands, [[b;#aaa;]whoami] to read something about me, or [[b;#aaa;]about] to learn about this webpage.\n\n",
         prompt: function(p){
             var path = '~'
             p(e + ":" + path + "# ");
@@ -103,7 +105,7 @@ jQuery(document).ready(function($) {
             // prevent loosing focus
             return false;
         },
-        tabcompletion: true,
+        completion: true,
         checkArity: false
     });
 });
@@ -111,16 +113,16 @@ jQuery(document).ready(function($) {
 function showHelp(consoleObj)
 {
         consoleObj.echo("Available commands:");
-        consoleObj.echo("\t[[b;#44D544;]whoami]        read self wrote shit about me ;-)");
-        consoleObj.echo("\t[[b;#44D544;]contact]       get in touch");
-        consoleObj.echo("\t[[b;#44D544;]resume]        more formal way of shit I wrote about me");
-        consoleObj.echo("\t[[b;#44D544;]keywords]      if you're that kinda guy");
-        consoleObj.echo("\t[[b;#44D544;]pics]          see my dirty face");
-        consoleObj.echo("\t[[b;#44D544;]clear]         clear the messy console");
-        consoleObj.echo("\t[[b;#44D544;]help]          if you get lost.");
-        consoleObj.echo("\t[[b;#44D544;]xkcd]          because who doesn't like a good comic?");
-        consoleObj.echo("\t[[b;#44D544;]animate_me]    the whole internet loves gifs. try [[b;#44D544;]animate_me 'kitten dj']");
-        consoleObj.echo("\t[[b;#44D544;]image_me]      if you want to image search and see people. try [[b;#44D544;]image_me 'chandra bhavanasi'] ");
+        consoleObj.echo("\t[[b;#aaa;]whoami]        read self wrote shit about me ;-)");
+        consoleObj.echo("\t[[b;#aaa;]contact]       get in touch");
+        consoleObj.echo("\t[[b;#aaa;]resume]        more formal way of shit I wrote about me");
+        consoleObj.echo("\t[[b;#aaa;]keywords]      if you're that kinda guy");
+        consoleObj.echo("\t[[b;#aaa;]pics]          see my dirty face");
+        consoleObj.echo("\t[[b;#aaa;]clear]         clear the messy console");
+        consoleObj.echo("\t[[b;#aaa;]help]          if you get lost.");
+        consoleObj.echo("\t[[b;#aaa;]xkcd]          because who doesn't like a good comic?");
+        consoleObj.echo("\t[[b;#aaa;]animate_me]    the whole internet loves gifs. try [[b;#aaa;]animate_me kitten dj]");
+        consoleObj.echo("\t[[b;#aaa;]image_me]      if you want to image search and see people. try [[b;#aaa;]image_me chandra bhavanasi] ");
         consoleObj.echo("");
         consoleObj.echo("PROTIP: press <tab> to trigger autocompletion");
 }
