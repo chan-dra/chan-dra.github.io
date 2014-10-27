@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 function showHelp(consoleObj)
 {
         consoleObj.echo("Available commands:");
-        consoleObj.echo("\t[[b;#aaa;]whoami]        read self wrote shit about me ;-)");
+        consoleObj.echo("\t[[b;#aaa;]whoami]        read shit I wrote about me ;-)");
         consoleObj.echo("\t[[b;#aaa;]contact]       get in touch");
         consoleObj.echo("\t[[b;#aaa;]resume]        more formal way of shit I wrote about me");
         consoleObj.echo("\t[[b;#aaa;]keywords]      if you're that kinda guy");
