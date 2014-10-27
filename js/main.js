@@ -3,14 +3,17 @@ var e = "hello@chandra";
 var App = {
     echo: function(text) {
         this.echo(text);
+        if(ga != undefined) ga('send', 'event', 'echo', 'text', text);
     },
     help: function() {
       showHelp(this);
+      if(ga != undefined) ga('send', 'event', 'help');
     },
 
     ls: function() {
         this.error('<ls> is not available. I guess you want to list available commands with <help>:');
          showHelp(this);
+        if(ga != undefined) ga('send', 'event', 'ls');
     },
     whoami: function() {
         this.echo("\nHey there!");
@@ -22,40 +25,49 @@ var App = {
         this.echo("I moved to <strong><a href='http://en.wikipedia.org/wiki/San_Francisco'>San Francisco</a></strong> recently and I love it here.", {raw:true});
         this.echo("");
         this.echo("I like JavaScript, hackathons, good coffee and a great tasting beer.");
+        if(ga != undefined) ga('send', 'event', 'whoami');
     },
     keywords: function() {
         this.echo("I suppose you like buzzwords? hacking, entrepreneurship, startups, BTC, node, agile, JavaScript, salesforce \n")
+        if(ga != undefined) ga('send', 'event', 'keywords');
     },
     pics: function() {
         this.echo("Seriously, I can't have a dirty picture here. try [[b;#aaa;]image_me 'chandra bhavanasi'] and you may landup on some awful pictures of me.");
+        if(ga != undefined) ga('send', 'event', 'pics');
     },
     clear: function() {
         this.clear()
+        if(ga != undefined) ga('send', 'event', 'clear');
     },
     resume: function() {
         this.echo("Seriously, you came this far asking for a resume?")
         this.echo("Alright, get it <a href='../resume.pdf'>here</a>",{raw:true});
+        if(ga != undefined) ga('send', 'event', 'resume');
     },
     contact: function() {
         this.echo("");
         this.echo("<strong><a href='www.linkedin.com/in/chandrasekharbhavanasi/'>LinkedIn</a></strong>", {raw:true});
         this.echo("<strong><a href='mailto:cbhavana@uci.edu'>email</a></strong>", {raw:true});
         this.echo("");
+        if(ga != undefined) ga('send', 'event', 'contact');
 
     },
     su: function(user) {
         this.echo("Seriously, [[b;#aaa;]"+user+"]!? I like you. Who are you?")
+        if(ga != undefined) ga('send', 'event', 'su', 'user', user);
     },
     sudo: function() {
         this.echo("Ohhhh jeeez. A smart one. Who are you?")
+        if(ga != undefined) ga('send', 'event', 'sudo');
     },
     about: function() {
         this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal</a> plugin, and hosted by <strong><a href='http://pages.github.com' target='_blank'>GitHub Pages</a></strong> <br/><br/>Some of the commands here are inspired by <strong><a href=''>Hubot for HipChat (if you know what I mean)</a></strong> <br/><br/>I'm going update this (I promise!) regularly, with more cool stuff or hacks that I develop. Lookout!", {raw:true});
-
+        if(ga != undefined) ga('send', 'event', 'about');
     },
     xkcd: function() {
         window.open('http://c.xkcd.com/random/comic/', '_blank');
         window.focus()
+        if(ga != undefined) ga('send', 'event', 'xkcd');
     },
     animate_me: function(q, q1) {
         if (q1) q = q + ' ' + q1;
@@ -73,6 +85,7 @@ var App = {
                 self.echo("<img src='"+ url +"'/>", {raw:true})
             }
         });
+        if(ga != undefined) ga('send', 'event', 'animate_me', 'query', q);
     },
     image_me: function(q, q1) {
         if (q1) q = q + ' ' + q1;
@@ -90,6 +103,7 @@ var App = {
                 self.echo("<img src='"+ url +"'/>", {raw:true})
             }
         });
+        if(ga != undefined) ga('send', 'event', 'image_me', 'query', q);
     }
 }
 
