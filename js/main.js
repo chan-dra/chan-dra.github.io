@@ -61,7 +61,7 @@ var App = {
         if(ga != undefined) ga('send', 'event', 'sudo');
     },
     about: function() {
-        this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal</a> plugin, and hosted by <strong><a href='http://pages.github.com' target='_blank'>GitHub Pages</a></strong> <br/><br/>Some of the commands here are inspired by <strong><a href=''>Hubot for HipChat (if you know what I mean)</a></strong> <br/><br/>I'm going update this (I promise!) regularly, with more cool stuff or hacks that I develop. Lookout!", {raw:true});
+        this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal</a> plugin, and hosted by <strong><a href='http://pages.github.com' target='_blank'>GitHub Pages</a></strong> <br/><br/>Some of the commands here are inspired by <strong><a href=''>Hubot for HipChat</a></strong> <br/><br/>I'm going update this (I promise!) regularly, with more cool stuff or hacks that I develop. Lookout!", {raw:true});
         if(ga != undefined) ga('send', 'event', 'about');
     },
     xkcd: function() {
