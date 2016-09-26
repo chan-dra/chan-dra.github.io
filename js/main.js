@@ -78,7 +78,7 @@ var App = {
             success: function(response) {
                 var url = "";
                 if (response.data.length) {
-                    url = response.data[0].embed_url;
+                    url = response.data[0].images.fixed_height.url;
                 }
                 self.echo("<img src='"+ url +"'/>", {raw:true})
             }
@@ -94,7 +94,7 @@ var App = {
             success: function(response) {
                 var url = "";
                 if (response.data.length) {
-                    url = response.data[0].embed_url;
+                    url = response.data[0].images.fixed_height.url;
                 }
                 self.echo("<img src='"+ url +"'/>", {raw:true})
             }
