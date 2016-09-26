@@ -91,15 +91,17 @@ var App = {
         if (q1) q = q + ' ' + q1;
         self = this;
         $.ajax({
-            url: "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+q,
+            url: "http://api.giphy.com/v1/gifs/search?q="+q+"&api_key=dc6zaTOxFJmzC",
 
             jsonp: "callback",
 
             dataType: "jsonp",
 
             success: function( response ) {
-                var k = Math.floor((Math.random() * response.responseData.results.length) - 1);
-                var url = response.responseData.results[k].url;
+                var url = "";
+                if (response.data.length) {
+                    url = response.data[0].embed_url;
+                }
                 self.echo("<img src='"+ url +"'/>", {raw:true})
             }
         });
