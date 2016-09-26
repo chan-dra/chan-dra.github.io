@@ -91,13 +91,9 @@ var App = {
         if (q1) q = q + ' ' + q1;
         self = this;
         $.ajax({
-            url: "http://api.giphy.com/v1/gifs/search?q="+q+"&api_key=dc6zaTOxFJmzC",
-
-            jsonp: "callback",
-
-            dataType: "jsonp",
-
-            success: function( response ) {
+            url: "http://api.giphy.com/v1/gifs/search?q=" + q +  "&api_key=dc6zaTOxFJmzC",
+            type: "GET",
+            success: function(data) {
                 var url = "";
                 if (response.data.length) {
                     url = response.data[0].embed_url;
