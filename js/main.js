@@ -21,8 +21,8 @@ var App = {
         this.echo("I like to challenge myself on a dialy basis.");
         this.echo("I made this website for fun on a friday night, so this website will probably be forever under construction and never gets completed. ");
         this.echo("");
-        this.echo("I currently work at this awesome little startup called <strong><a href='http://isocket.com'>iSocket</a></strong>", {raw: true});
-        this.echo("I moved to <strong><a href='http://en.wikipedia.org/wiki/San_Francisco'>San Francisco</a></strong> recently and I love it here.", {raw:true});
+        this.echo("I currently work at <strong><a href='http://twitter.com'>Twitter</a></strong>", {raw: true});
+        this.echo("I moved to <strong><a href='http://en.wikipedia.org/wiki/Fremont'>Fremont</a></strong> recently with my wife and I love it here.", {raw:true});
         this.echo("");
         this.echo("I like JavaScript, hackathons, good coffee and a great tasting beer.");
         if(ga != undefined) ga('send', 'event', 'whoami');
